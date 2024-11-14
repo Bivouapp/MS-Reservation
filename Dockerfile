@@ -15,7 +15,7 @@ RUN chmod +x gradlew
 COPY . .
 
 # Build the application
-RUN ./gradlew build --no-daemon
+RUN ./gradlew clean build --no-daemon
 
 # --- Runtime stage ---
 FROM eclipse-temurin:23-jdk-alpine

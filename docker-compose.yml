@@ -14,7 +14,7 @@ services:
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=postgres
     volumes:
-      - applogs:/app/logs
+      - appLogs:/app/logs
 
   db:
     image: postgres:alpine
@@ -30,4 +30,4 @@ services:
 
 volumes:
   pgdata:
-  applogs:
+  appLogs:
