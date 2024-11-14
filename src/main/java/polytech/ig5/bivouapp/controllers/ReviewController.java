@@ -1,7 +1,7 @@
-package com.example.demo.controllers;
+package polytech.ig5.bivouapp.controllers;
 
-import com.example.demo.models.Review;
-import com.example.demo.repositories.ReviewRepository;
+import polytech.ig5.bivouapp.models.Review;
+import polytech.ig5.bivouapp.repositories.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

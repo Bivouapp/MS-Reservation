@@ -1,7 +1,7 @@
-package com.example.demo.controllers;
+package polytech.ig5.bivouapp.controllers;
 
-import com.example.demo.models.Disponibility;
-import com.example.demo.repositories.DisponibilityRepository;
+import polytech.ig5.bivouapp.models.Disponibility;
+import polytech.ig5.bivouapp.repositories.DisponibilityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -45,7 +45,7 @@ public class DisponibilityController {
             Disponibility updatedDisponibility = disponibility.get();
             updatedDisponibility.setStartDate(disponibilityDetails.getStartDate());
             updatedDisponibility.setEndDate(disponibilityDetails.getEndDate());
-            updatedDisponibility.setBivouac(disponibilityDetails.getBivouac());
+            updatedDisponibility.setBivouacId(disponibilityDetails.getBivouacId());
             return ResponseEntity.ok(disponibilityRepository.saveAndFlush(updatedDisponibility));
         } else {
             return ResponseEntity.notFound().build();

@@ -1,7 +1,7 @@
-package com.example.demo.controllers;
+package polytech.ig5.bivouapp.controllers;
 
-import com.example.demo.models.Reservation;
-import com.example.demo.repositories.ReservationRepository;
+import polytech.ig5.bivouapp.models.Reservation;
+import polytech.ig5.bivouapp.repositories.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -48,9 +48,9 @@ public class ReservationController {
             updatedReservation.setNbBivouaker(reservationDetails.getNbBivouaker());
             updatedReservation.setPrice(reservationDetails.getPrice());
             updatedReservation.setStatus(reservationDetails.getStatus());
-            updatedReservation.setUser(reservationDetails.getUser());
-            updatedReservation.setBivouac(reservationDetails.getBivouac());
-            updatedReservation.setReview(reservationDetails.getReview());
+            updatedReservation.setUserId(reservationDetails.getUserId());
+            updatedReservation.setBivouacId(reservationDetails.getBivouacId());
+            updatedReservation.setReviewId(reservationDetails.getReviewId());
             return ResponseEntity.ok(reservationRepository.saveAndFlush(updatedReservation));
         } else {
             return ResponseEntity.notFound().build();

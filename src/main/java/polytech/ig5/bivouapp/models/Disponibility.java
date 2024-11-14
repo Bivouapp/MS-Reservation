@@ -1,4 +1,4 @@
-package com.example.demo.models;
+package polytech.ig5.bivouapp.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
