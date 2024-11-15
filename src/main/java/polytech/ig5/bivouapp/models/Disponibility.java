@@ -17,7 +17,7 @@ public class Disponibility {
     private LocalDate endDate;
 
     @Column(name = "bivouac_id", nullable = false)
-    private long bivouacId;  // Remplacez Bivouac par un long pour l'identifiant
+    private int bivouacId;
 
     public long getDisponibilityId() {
         return disponibilityId;

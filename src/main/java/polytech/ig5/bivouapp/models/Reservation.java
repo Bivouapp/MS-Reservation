@@ -11,7 +11,7 @@ public class Reservation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long reservationId;
+    private int reservationId;
 
     private LocalDate startDate;
     private LocalDate endDate;
@@ -20,13 +20,13 @@ public class Reservation {
     private String status;
 
     @Column(name = "user_id", nullable = false)
-    private long userId;  
+    private int userId;  
 
     @Column(name = "bivouac_id", nullable = false)
-    private long bivouacId; 
+    private int bivouacId; 
 
     @Column(name = "review_id")
-    private Long reviewId; 
+    private int reviewId; 
 
     public long getReservationId() {
         return reservationId;
