@@ -11,13 +11,13 @@ public class Review {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long reviewId;
+    private int reviewId;
 
     private int rating;
     private String comment;
     private LocalDate date;
 
-    public long getReviewId() {
+    public int getReviewId() {
         return reviewId;
     }
 
@@ -33,7 +33,7 @@ public class Review {
         return date;
     }
 
-    public void setReviewId(long reviewId) {
+    public void setReviewId(int reviewId) {
         this.reviewId = reviewId;
     }
 

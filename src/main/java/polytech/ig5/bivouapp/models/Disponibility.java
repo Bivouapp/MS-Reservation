@@ -11,7 +11,7 @@ public class Disponibility {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long disponibilityId;
+    private int disponibilityId;
 
     private LocalDate startDate;
     private LocalDate endDate;
@@ -19,7 +19,7 @@ public class Disponibility {
     @Column(name = "bivouac_id", nullable = false)
     private int bivouacId;
 
-    public long getDisponibilityId() {
+    public int getDisponibilityId() {
         return disponibilityId;
     }
 
@@ -31,11 +31,11 @@ public class Disponibility {
         return endDate;
     }
 
-    public long getBivouacId() {
+    public int getBivouacId() {
         return bivouacId;
     }
 
-    public void setDisponibilityId(long disponibilityId) {
+    public void setDisponibilityId(int disponibilityId) {
         this.disponibilityId = disponibilityId;
     }
 
@@ -47,7 +47,7 @@ public class Disponibility {
         this.endDate = endDate;
     }
 
-    public void setBivouacId(long bivouacId) {
+    public void setBivouacId(int bivouacId) {
         this.bivouacId = bivouacId;
     }
 }

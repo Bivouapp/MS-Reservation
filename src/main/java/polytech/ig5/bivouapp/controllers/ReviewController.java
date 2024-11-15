@@ -25,7 +25,7 @@ public class ReviewController {
 
     // Get a single review by ID
     @GetMapping("/{id}")
-    public ResponseEntity<Review> get(@PathVariable Long id) {
+    public ResponseEntity<Review> get(@PathVariable Integer id) {
         Optional<Review> review = reviewRepository.findById(id);
         return review.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
@@ -39,7 +39,7 @@ public class ReviewController {
 
     // Update an existing review
     @PutMapping("/{id}")
-    public ResponseEntity<Review> update(@PathVariable Long id, @RequestBody Review reviewDetails) {
+    public ResponseEntity<Review> update(@PathVariable Integer id, @RequestBody Review reviewDetails) {
         Optional<Review> review = reviewRepository.findById(id);
         if (review.isPresent()) {
             Review updatedReview = review.get();
@@ -55,7 +55,7 @@ public class ReviewController {
     // Delete a review by ID
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable Integer id) {
         if (reviewRepository.existsById(id)) {
             reviewRepository.deleteById(id);
             return ResponseEntity.noContent().build();

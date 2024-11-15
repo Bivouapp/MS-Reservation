@@ -25,7 +25,7 @@ public class DisponibilityController {
 
     // Get a single disponibility by ID
     @GetMapping("/{id}")
-    public ResponseEntity<Disponibility> get(@PathVariable Long id) {
+    public ResponseEntity<Disponibility> get(@PathVariable Integer id) {
         Optional<Disponibility> disponibility = disponibilityRepository.findById(id);
         return disponibility.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
@@ -39,7 +39,7 @@ public class DisponibilityController {
 
     // Update an existing disponibility
     @PutMapping("/{id}")
-    public ResponseEntity<Disponibility> update(@PathVariable Long id, @RequestBody Disponibility disponibilityDetails) {
+    public ResponseEntity<Disponibility> update(@PathVariable Integer id, @RequestBody Disponibility disponibilityDetails) {
         Optional<Disponibility> disponibility = disponibilityRepository.findById(id);
         if (disponibility.isPresent()) {
             Disponibility updatedDisponibility = disponibility.get();
@@ -55,7 +55,7 @@ public class DisponibilityController {
     // Delete a disponibility by ID
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable Integer id) {
         if (disponibilityRepository.existsById(id)) {
             disponibilityRepository.deleteById(id);
             return ResponseEntity.noContent().build();

@@ -28,7 +28,7 @@ public class Reservation {
     @Column(name = "review_id")
     private int reviewId; 
 
-    public long getReservationId() {
+    public int getReservationId() {
         return reservationId;
     }
 
@@ -52,19 +52,19 @@ public class Reservation {
         return status;
     }
 
-    public long getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public long getBivouacId() {
+    public int getBivouacId() {
         return bivouacId;
     }
 
-    public Long getReviewId() {
+    public int getReviewId() {
         return reviewId;
     }
 
-    public void setReservationId(long reservationId) {
+    public void setReservationId(int reservationId) {
         this.reservationId = reservationId;
     }
 
@@ -88,15 +88,15 @@ public class Reservation {
         this.status = status;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
-    public void setBivouacId(long bivouacId) {
+    public void setBivouacId(int bivouacId) {
         this.bivouacId = bivouacId;
     }
 
-    public void setReviewId(Long reviewId) {
+    public void setReviewId(int reviewId) {
         this.reviewId = reviewId;
     }
 }
