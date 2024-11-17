@@ -44,3 +44,24 @@ Les données sont stockées dans un volume nommé msReservationPgdata, ce qui ga
     ```bash
     docker-compose down -v
     ```
+
+- Reconstruire les images Docker:
+
+    ```bash
+    docker-compose build --no-cache
+
+
+- Voir les logs des conteneurs:
+
+    ```bash
+    docker-compose logs -f app
+    ```
+    ```bash
+    docker-compose logs -f db
+    ```
+
+- Executer le container db en mode interactif:
+
+    ```bash
+    docker exec -it ms-reservation_db_1 psql -U postgres
+    ```
