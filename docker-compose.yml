@@ -9,10 +9,8 @@ services:
       - "8080:8080"
     depends_on:
       - db
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/postgres-db
-      - SPRING_DATASOURCE_USERNAME=postgres
-      - SPRING_DATASOURCE_PASSWORD=postgres
+    env_file:
+      - .env
     volumes:
       - appLogs:/app/logs
 
@@ -20,10 +18,8 @@ services:
     image: postgres:alpine
     ports:
       - "5432:5432"
-    environment:
-      POSTGRES_DB: postgres-db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+    env_file:
+      - .env
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
