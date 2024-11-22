@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/v1/disponibilities")
+@RequestMapping("/api/disponibilities")
 public class DisponibilityController {
 
     @Autowired
