@@ -1,8 +1,10 @@
 package polytech.ig5.bivouapp.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.time.LocalDate;
+
 
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity(name = "reservations")
@@ -15,9 +17,15 @@ public class Reservation {
 
     private LocalDate startDate;
     private LocalDate endDate;
-    private int nbBivouaker;
     private float price;
-    private String status;
+
+    @Column(name = "nb_bivouaker", nullable = false, columnDefinition = "int default 1")
+    @JsonIgnore // Exclude from serialization/deserialization
+    private int nbBivouaker = 1; // Default value
+
+    @Column(name = "status", nullable = false, columnDefinition = "varchar(255) default 'pending'")
+    @JsonIgnore // Exclude from serialization/deserialization
+    private String status = "pending"; // Default value
 
     @Column(name = "user_id", nullable = false)
     private int userId;  
