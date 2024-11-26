@@ -14,7 +14,7 @@ public class SpringSecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            // .csrf().disable() // Disable CSRF since this is a stateless API
+            .csrf().disable()
             .authorizeHttpRequests(auth -> auth
                 .anyRequest().permitAll()
                 // .anyRequest().authenticated() // Require authentication for all endpoints
