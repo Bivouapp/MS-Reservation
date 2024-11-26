@@ -19,16 +19,7 @@ public class SpringSecurityConfig {
                 .anyRequest().permitAll()
                 // .anyRequest().authenticated() // Require authentication for all endpoints
             );
-            // .oauth2ResourceServer() // Enable OAuth2 Resource Server for JWT authentication
-            // .jwt(); // Enable JWT as the token type
 
         return http.build();
     }
-
-    // @Bean
-    // public JwtAuthenticationConverter jwtAuthenticationConverter() {
-    //     JwtAuthenticationConverter converter = new JwtAuthenticationConverter();
-    //     // Add custom logic here if needed (like role extraction from JWT claims)
-    //     return converter;
-    // }
 }
